@@ -38,12 +38,13 @@ Countdown.prototype.count = function () {
         }
 
         console.log(`${runningSeconds} ${runningMinutes} ${runningHours}`);
+
     }, 1000);
 };
 
-testS = prompt("Entrez Secondes");
-testM = prompt("Entrez Minutes");
-testH = prompt("Entrez Heures");
+testS = parseInt(prompt("Entrez Secondes"));
+testM = parseInt(prompt("Entrez Minutes"));
+testH = parseInt(prompt("Entrez Heures"));
 
 test = new Countdown(testS, testM, testH);
 test.count();
