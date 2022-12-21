@@ -56,3 +56,20 @@ html {
 }
 
 /*FIN CALIBRAGE PX/REM*/
+
+#new {
+    display: flex;
+    justify-content: center;
+}
+
+    #new input {
+        width: 3rem;
+        height: 3rem;
+    }
+
+#timers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
