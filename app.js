@@ -94,5 +94,5 @@ newTimerButton.addEventListener("click",() => {
         newTimerDisplay.style.fontSize = "2rem";
         newTimerDiv.append(newTimerDisplay);
         timersDiv.append(newTimerDiv);
-        let update = setInterval( () => newTimerDisplay.innerText = `H:${newTimer.hours} M:${newTimer.minutes} S:${newTimer.seconds}`,1000);
+        setInterval( () => newTimerDisplay.innerText = `H:${newTimer.hours} M:${newTimer.minutes} S:${newTimer.seconds}`,1000);
 }});
