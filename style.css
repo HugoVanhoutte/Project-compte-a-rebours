@@ -71,3 +71,32 @@ html {
     justify-content: flex-start;
     align-items: flex-start;
 }
+
+.timer {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+
+    border: 1px black solid;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+.timer p {
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+button {
+    background-color: #ececec;
+    border-radius: 1rem;
+}
+
+button:hover {
+    background-color: #c9c9c9;
+}
+
+button:active {
+    background-color: #a2a2a2;
+    box-shadow: inset grey 2px 2px;
+}
