@@ -65,6 +65,10 @@ html {
         height: 3rem;
     }
 
+    #new #name {
+        width: 9rem;
+    }
+
 #timers {
     display: flex;
     flex-wrap: wrap;

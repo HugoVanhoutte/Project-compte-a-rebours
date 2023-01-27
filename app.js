@@ -4,12 +4,14 @@ let newTimerSeconds = document.getElementById("seconds");
 let newTimerMinutes = document.getElementById("minutes");
 let newTimerHours = document.getElementById("hours");
 const timersDiv = document.getElementById("timers");
+const name = document.getElementById("name");
 
 //Object Countdown
-function Countdown(seconds, minutes, hours) {
+function Countdown(seconds, minutes, hours, name) {
     this.seconds = seconds;
     this.minutes = minutes;
     this.hours = hours;
+    this.name = name;
 }
 //Methods counting seconds
 Countdown.prototype.count = function () {
@@ -73,7 +75,7 @@ Countdown.prototype.pause = () => {
 
 
 newTimerButton.addEventListener("click",() => {
-    let newTimer = new Countdown(parseInt(newTimerSeconds.value), parseInt(newTimerMinutes.value), parseInt(newTimerHours.value));
+    let newTimer = new Countdown(parseInt(newTimerSeconds.value), parseInt(newTimerMinutes.value), parseInt(newTimerHours.value), name.value);
     if (parseInt(newTimerHours.value) < 0){
         alert("Veuillez rentrer des valeurs correctes")
     }
@@ -90,14 +92,17 @@ newTimerButton.addEventListener("click",() => {
         newTimerHours.value = "";
 
         let newTimerDiv = document.createElement("div");
-        newTimerDiv.className = "timer"
+        newTimerDiv.className = "timer";
 
         let newTimerDisplay = document.createElement("p");
+        let newTimerName = document.createElement("p");
+        newTimerName.innerText = newTimer.name;
         newTimerDisplay.innerText = `H:${newTimer.hours} M:${newTimer.minutes} S:${newTimer.seconds}`;
+        newTimerDiv.append(newTimerName);
         newTimerDiv.append(newTimerDisplay);
         timersDiv.append(newTimerDiv);
 
-        let update = setInterval( () => newTimerDisplay.innerText = `H:${newTimer.hours} M:${newTimer.minutes} S:${newTimer.seconds}`,1000);
+        setInterval( () => newTimerDisplay.innerText = `H:${newTimer.hours} M:${newTimer.minutes} S:${newTimer.seconds}`,1000);
         let newStopButton = document.createElement("button");
         newStopButton.innerText = "pause";
         newTimerDiv.append(newStopButton);
